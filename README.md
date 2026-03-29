@@ -69,18 +69,19 @@ Résultat :
 ⸻
 
 ##  :rocket: Installation
-    1.    Cloner le projet :
 
-git clone https://github.com/AmZzPYJS/vlsm-calculator.git
-cd vlsm-calculator
+  1.    Cloner le projet :
 
-    2.    Installer les dépendances :
+    git clone https://github.com/AmZzPYJS/vlsm-calculator.git
+    cd vlsm-calculator
 
-pip install streamlit pandas
+  2.    Installer les dépendances :
 
-    3.    Lancer l’application :
+    pip install streamlit pandas
 
-streamlit run app.py
+  3.    Lancer l’application :
+
+    streamlit run app.py
 
 
 ⸻
