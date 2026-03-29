@@ -72,8 +72,7 @@ Résultat :
 
   1.    Cloner le projet :
 
-    git clone https://github.com/AmZzPYJS/vlsm-calculator.git
-    cd vlsm-calculator
+    git clone https://github.com/AmZzPYJS/VLSM-Calculator-and-Vizualisation-Python.git
 
   2.    Installer les dépendances :
 
