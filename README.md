@@ -1,93 +1,55 @@
-#  :rocket: VLSM Calculator & Visualizer
+# 🌐 VLSM Calculator & Visualizer
 
-⸻
+An interactive web application that computes and visualizes **Variable Length Subnet Masking (VLSM)** addressing plans. Built with Python and Streamlit, it takes a base network and a list of host requirements, then outputs an optimized subnetting plan.
 
-##  :pushpin: Description
+> Personal project — built to practice networking concepts and web app development with Streamlit
 
-Ce projet est une application interactive développée en Python avec Streamlit permettant de calculer automatiquement un plan d’adressage IPv4 en utilisant la méthode VLSM (Variable Length Subnet Mask).
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-L’utilisateur entre un réseau de base ainsi que les besoins en hôtes, et l’application génère automatiquement :
-    •    les sous-réseaux optimisés
-    •    les plages d’adresses IP
-    •    les masques associés
-    •    les adresses de broadcast
+---
 
-Une visualisation claire du découpage réseau est également proposée.
+## Features
 
-⸻
+- Input: base network address (e.g., `192.168.1.0/24`) and host requirements per subnet
+- Automatic VLSM calculation with optimal subnet allocation
+- Visual representation of the addressing plan
+- Subnet details: network address, broadcast, usable range, mask, CIDR notation
+- Interactive Streamlit web interface — no installation needed for end users
 
-##  :dart: Objectifs
-    •    Comprendre et appliquer le VLSM
-    •    Automatiser un calcul souvent fait à la main en TD
-    •    Visualiser concrètement le découpage d’un réseau
-    •    Transformer un concept théorique en application interactive
+## How VLSM works
 
-⸻
+VLSM allows subnets of different sizes within the same network, unlike fixed-length subnetting. The algorithm:
 
-## :gear: Fonctionnalités
+1. Sorts subnets by size (largest first)
+2. Allocates the smallest power-of-2 block that fits each requirement
+3. Assigns network addresses sequentially to avoid overlap
 
-:white_check_mark: Entrée d’un réseau de base (ex: 192.168.1.0/24)
-:white_check_mark: Ajout dynamique de sous-réseaux
-:white_check_mark: Calcul automatique VLSM
-:white_check_mark: Génération d’un tableau complet :
-    •    CIDR
-    •    Masque
-    •    Adresse réseau
-    •    Première / dernière IP
-    •    Broadcast
+## Tech stack
 
-##  :white_check_mark: Visualisation graphique du découpage réseau
+| Component | Technology |
+|-----------|-----------|
+| Language | Python |
+| Web framework | Streamlit |
+| Networking | ipaddress (stdlib) |
 
-⸻
+## Getting started
 
-##  :desktop: Aperçu
+```bash
+git clone https://github.com/AmZzPYJS/VLSM-Calculator-and-Vizualisation-Python.git
+cd VLSM-Calculator-and-Vizualisation-Python
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-Exemple :
+## What I learned
 
-Réseau de base : 172.16.100.0/24
+- Implementing VLSM subnetting logic from scratch using Python's `ipaddress` module
+- Building interactive web applications with Streamlit (widgets, layouts, session state)
+- Translating networking theory (subnet masks, CIDR, broadcast addresses) into working code
+- Designing a user-friendly interface for a technical tool
 
-Sous-réseaux :
-- 50 hôtes
-- 20 hôtes
-- 10 hôtes
-- 2 hôtes
+## License
 
-Résultat :
-    •    /26 → 172.16.100.0
-    •    /27 → 172.16.100.64
-    •    /28 → 172.16.100.96
-    •    /30 → 172.16.100.112
-
-⸻
-
-##  :tools: Technologies utilisées
-    •    Python :snake:
-    •    Streamlit :art:
-    •    Pandas :bar_chart:
-    •    ipaddress (librairie standard)
-
-⸻
-
-##  :rocket: Installation
-
-  1.    Cloner le projet :
-
-    git clone https://github.com/AmZzPYJS/VLSM-Calculator-and-Vizualisation-Python.git
-
-  2.    Installer les dépendances :
-
-    pip install streamlit pandas
-
-  3.    Lancer l’application :
-
-    streamlit run app.py
-
-
-⸻
-
-##  :books: Concepts utilisés
-    •    Subnetting IPv4
-    •    VLSM (Variable Length Subnet Mask)
-    •    CIDR
-    •    Calcul des plages IP
-    •    Broadcast / Network Address
+MIT
